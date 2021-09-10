@@ -1,14 +1,18 @@
+from player_list import PlayerList
+
+
 class Game:
     def __init__(self) -> None:
         self.round_count = 0
         self.max_rounds = 0
         self.mode = 0
         self.run_game()
-
+        PlayerList()
 
 
     def run_game(self):
         self.game_mode()
+        self.generate_players()
         self.round_count_option()
         self.display_rules()
         self.start_round()
@@ -27,9 +31,13 @@ class Game:
         \nPaper disproves Spock
         \nSpock vaporizes Rock\n
         ''')
-
+    
+    def generate_players (self):
+        PlayerList.create_player(self.mode)
+        
     def game_mode(self):
-        pass
+        self.mode = int(input("How many players: 1 or 2"))
+        return self.mode
 
     def round_count_option(self):
         pass
