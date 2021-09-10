@@ -10,11 +10,15 @@ class Game:
 
 
     def run_game(self):
-        self.game_mode()
-        self.generate_players()
-        self.round_count_option()
-        self.display_rules()
-        self.start_round()
+        game_continue = "1"
+        while game_continue:
+            self.game_mode()
+            self.generate_players()
+            self.round_count_option()
+            self.display_rules()
+            self.start_round()
+            self.display_winner()
+            game_continue = input("Would you like to play again? 1: Yes 2: No \n")
 
 
     def display_rules(self):
@@ -53,7 +57,10 @@ class Game:
                 self.Win_Condition.player_list.players[0].score += 1
             else:
                 self.Win_Condition.player_list.players[1].score += 1
-            game_over = self.Win_Condition.win_condition_check()  
+            game_over = self.Win_Condition.win_condition_check()
 
     def display_winner(self):
-        pass
+        if self.Win_Condition.player_list.players[0].score > self.Win_Condition.player_list.players[1].score:
+            print("Player One is the Winner!")
+        if self.Win_Condition.player_list.players[1].score > self.Win_Condition.player_list.players[0].score:
+            print("Player Two is the Winner!")

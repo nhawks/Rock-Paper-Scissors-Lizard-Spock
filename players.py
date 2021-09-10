@@ -10,7 +10,7 @@ class Player:
 
     def pick_gesture(self):
         print(self.gestures)
-        self.choice = input(f'{self.name} please pick a gesture!')
+        self.choice = input(f'{self.name} please pick a gesture! \n')
         if self.gesture_validation():
             return self.choice
 
