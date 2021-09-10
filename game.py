@@ -20,7 +20,7 @@ class Game:
         \nScissors decapitates Lizard
         \nLizard eats Paper
         \nPaper disproves Spock
-        \nSpock vaporizes Rock
+        \nSpock vaporizes Rock\n
         ''')
 
     def game_mode(self):
