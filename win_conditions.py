@@ -1,6 +1,9 @@
+from player_list import PlayerList
+
+
 class WinConditions:
     def __init__(self) -> None:
-        pass
+        self.wins_needed = 0
 
     
     def gesture_comparison(self, player_one, player_two):
@@ -29,3 +32,14 @@ class WinConditions:
                 return True
             if player_two.choice == "lizard" or "paper":
                 return False
+
+    def how_many_wins(self, rounds):
+        if rounds == 3:
+            self.wins_needed = 2  
+
+    def win_condition_check(self):
+        for player in self.PlayerList.players:
+            if player.score == self.wins_needed:
+                return True
+        else:
+            return False

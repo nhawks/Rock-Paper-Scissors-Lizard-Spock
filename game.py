@@ -1,13 +1,18 @@
 class Game:
     def __init__(self) -> None:
         self.round_count = 0
+        self.max_rounds = 0
         self.mode = 0
         self.run_game()
 
 
 
     def run_game(self):
-        pass
+        self.game_mode()
+        self.round_count_option()
+        self.display_rules()
+        self.start_round()
+
 
     def display_rules(self):
         print('''
