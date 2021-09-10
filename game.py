@@ -1,4 +1,3 @@
-from player_list import PlayerList
 from win_conditions import WinConditions
 
 class Game:
@@ -7,9 +6,7 @@ class Game:
         self.max_rounds = 0
         self.mode = 0
         self.run_game()
-        WinConditions()
-        PlayerList()
-        
+        self.Win_Condition = WinConditions()
 
 
     def run_game(self):
@@ -46,7 +43,17 @@ class Game:
         # self.round_count = int(input("How many rounds would you like to play?"))
 
     def start_round(self):
-        self.how_many_wins(self.round_count)
+        game_over = False
+        self.WinConditions.how_many_wins(self.round_count)
+        while not game_over:
+            for players in self.Win_Condition.player_list.players:
+                players.pick_gesture()
+            player_one_result = self.Win_Condition.gesture_comparison(self.Win_Condition.player_list.players[0],self.Win_Condition.player_list.players[1])
+            if player_one_result:
+                self.Win_Condition.player_list.players[0].score += 1
+            else:
+                self.Win_Condition.player_list.players[1].score += 1
+            game_over = self.Win_Condition.win_condition_check()  
 
     def display_winner(self):
         pass
