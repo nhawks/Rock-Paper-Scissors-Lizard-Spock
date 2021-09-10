@@ -9,10 +9,14 @@ class Player:
 
 
     def pick_gesture(self):
-        print(self.gestures)
-        self.choice = input(f'{self.name} please pick a gesture! \n')
-        if self.gesture_validation():
-            return self.choice
+        invalid = True
+        while invalid:
+            print(self.gestures)
+            self.choice = input(f'{self.name} please pick a gesture! \n')
+            if self.gesture_validation():
+                invalid = False
+                return self.choice
+
 
     def gesture_validation(self):
         if self.choice in self.gestures:
