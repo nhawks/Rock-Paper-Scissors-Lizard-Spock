@@ -5,8 +5,9 @@ class Game:
         self.round_count = 0
         self.max_rounds = 0
         self.mode = 0
-        self.run_game()
         self.Win_Condition = WinConditions()
+        self.run_game()
+
 
 
     def run_game(self):
@@ -36,7 +37,7 @@ class Game:
         ''')
     
     def generate_players (self):
-        self.PlayerList.create_player(self.mode)
+        self.Win_Condition.player_list.create_player(self.mode)
         
     def game_mode(self):
         self.mode = int(input("How many players: 1 or 2"))
@@ -48,7 +49,7 @@ class Game:
 
     def start_round(self):
         game_over = False
-        self.WinConditions.how_many_wins(self.round_count)
+        self.Win_Condition.how_many_wins(self.round_count)
         while not game_over:
             for players in self.Win_Condition.player_list.players:
                 players.pick_gesture()
