@@ -40,7 +40,7 @@ class Game:
         self.Win_Condition.player_list.create_player(self.mode)
         
     def game_mode(self):
-        self.mode = int(input("How many players: 1 or 2"))
+        self.mode = int(input("How many players: 1 or 2 \n"))
         return self.mode
 
     def round_count_option(self):
@@ -56,8 +56,10 @@ class Game:
             player_one_result = self.Win_Condition.gesture_comparison(self.Win_Condition.player_list.players[0],self.Win_Condition.player_list.players[1])
             if player_one_result:
                 self.Win_Condition.player_list.players[0].score += 1
+                print("Player One beats Player Two this round!")
             else:
                 self.Win_Condition.player_list.players[1].score += 1
+                print("Player Two beats Player One this round!")
             game_over = self.Win_Condition.win_condition_check()
 
     def display_winner(self):

@@ -9,29 +9,29 @@ class WinConditions:
     
     def gesture_comparison(self, player_one, player_two):
         if player_one.choice == "rock":
-            if player_two.choice == "scissors" or "lizard":
+            if player_two.choice == "scissors" or player_two.choice == "lizard":
                 return True
-            elif player_two.choice == "paper" or "spock":
+            elif player_two.choice == "paper" or player_two.choice == "spock":
                 return False    
         elif player_one.choice == "paper":
-            if player_two.choice == "rock" or "spock":
+            if player_two.choice == "rock" or player_two.choice == "spock":
                 return True
-            elif player_two.choice == "scissors" or "lizard":
+            elif player_two.choice == "scissors" or player_two.choice == "lizard":
                 return False
         elif player_one.choice == "scissors":
-            if player_two.choice == "paper" or "lizard":
+            if player_two.choice == "paper" or player_two.choice == "lizard":
                 return True
-            elif player_two.choice == "rock" or "spock":
+            elif player_two.choice == "rock" or player_two.choice == "spock":
                 return False
         elif player_one.choice == "lizard":
-            if player_two.choice == "spock" or "paper":
+            if player_two.choice == "spock" or player_two.choice == "paper":
                 return True
-            elif player_two.choice == "rock" or "scissors":
+            elif player_two.choice == "rock" or player_two.choice == "scissors":
                 return False
         elif player_one.choice == "spock":
-            if player_two.choice == "scissors" or "rock":
+            if player_two.choice == "scissors" or player_two.choice == "rock":
                 return True
-            if player_two.choice == "lizard" or "paper":
+            if player_two.choice == "lizard" or player_two.choice == "paper":
                 return False
 
     def how_many_wins(self, rounds):
