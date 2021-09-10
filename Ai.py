@@ -1,7 +1,13 @@
-class Ai(Player):
+from players import Player
+import random
+
+
+class Ai (Player):
     def __init__(self):
-        pass
+
+        super().__init__(self)
 
     
     def random_choice(self):
-        pass
+        self.choice = random.choice(self.gestures())
+        return self.choice
