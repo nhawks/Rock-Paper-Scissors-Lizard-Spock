@@ -12,7 +12,7 @@ class Game:
 
     def run_game(self):
         game_continue = "1"
-        while game_continue:
+        while game_continue == "1":
             self.game_mode()
             self.generate_players()
             self.round_count_option()
