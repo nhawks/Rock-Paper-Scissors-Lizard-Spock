@@ -1,4 +1,4 @@
-class Ai (Player):
+class Ai(Player):
     def __init__(self):
         pass
 

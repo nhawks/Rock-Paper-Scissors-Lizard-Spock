@@ -1,10 +1,19 @@
 class Player:
-    def __init__(self):
-        pass
+    def __init__ (self, name):
+        self.name = name
+        self.score = 0
+        self.gestures = ("rock", "paper", "scissors", "lizard", "spock")
+        self.choice = ""
 
 
-    def generate_player(self):
-        pass
-    
-    def pick_gestures(self):
-        pass
+    def pick_gesture(self):
+        print(self.gestures)
+        self.choice = input(f'{self.name} please pick a gesture!')
+        if self.gesture_validation():
+            return self.choice
+
+    def gesture_validation(self):
+        if self.choice in self.gestures:
+            return True
+        else:
+            return False   
