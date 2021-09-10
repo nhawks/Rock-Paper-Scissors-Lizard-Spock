@@ -1,5 +1,5 @@
 from player_list import PlayerList
-
+from win_conditions import WinConditions
 
 class Game:
     def __init__(self) -> None:
@@ -7,7 +7,9 @@ class Game:
         self.max_rounds = 0
         self.mode = 0
         self.run_game()
+        WinConditions()
         PlayerList()
+        
 
 
     def run_game(self):
@@ -33,17 +35,18 @@ class Game:
         ''')
     
     def generate_players (self):
-        PlayerList.create_player(self.mode)
+        self.PlayerList.create_player(self.mode)
         
     def game_mode(self):
         self.mode = int(input("How many players: 1 or 2"))
         return self.mode
 
     def round_count_option(self):
-        pass
+        self.round_count = 3
+        # self.round_count = int(input("How many rounds would you like to play?"))
 
     def start_round(self):
-        pass
+        self.how_many_wins(self.round_count)
 
     def display_winner(self):
         pass

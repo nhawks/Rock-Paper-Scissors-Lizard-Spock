@@ -1,5 +1,5 @@
 from Ai import Ai
-from player_list import Player
+from players import Player
 
 
 class PlayerList:
@@ -9,11 +9,11 @@ class PlayerList:
 
     def create_player(self, mode):
         if mode == 1:
-         player_one = Player()
+         player_one = Player("Player One")
          player_ai = Ai()
          self.players = [player_one, player_ai]
         
         if mode == 2:
-         player_one = Player()
-         player_two = Player()
+         player_one = Player("Player One")
+         player_two = Player("Player Two")
          self.players = [player_one, player_two]
