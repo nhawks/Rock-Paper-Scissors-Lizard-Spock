@@ -10,7 +10,7 @@ class PlayerList:
     def create_player(self, mode):
         if mode == 1:
          player_one = Player("Player One")
-         player_ai = Ai()
+         player_ai = Ai("AI")
          self.players = [player_one, player_ai]
         
         if mode == 2:
