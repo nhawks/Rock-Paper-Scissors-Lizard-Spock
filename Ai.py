@@ -1,5 +1,5 @@
-from players import Player
 import random
+from players import Player
 
 
 class Ai (Player):
@@ -7,6 +7,6 @@ class Ai (Player):
         super().__init__(name)
 
     
-    def random_choice(self):
-        self.choice = random.choice(self.gestures())
+    def pick_gesture(self):
+        self.choice = random.choice(self.gestures)
         return self.choice
