@@ -60,7 +60,7 @@ class Game:
                 print(f"Player One's {self.Win_Condition.player_list.players[0].choice} beats Player Two's {self.Win_Condition.player_list.players[1].choice} this round! \n")
             elif player_one_result == False:
                 self.Win_Condition.player_list.players[1].score += 1
-                print(f"Player Two's {self.Win_Condition.player_list.players[1].choice} beats Player One's {self.Win_Condition.player_list.players[0].choice} this round! \n")
+                print(f"\nPlayer Two's {self.Win_Condition.player_list.players[1].choice} beats Player One's {self.Win_Condition.player_list.players[0].choice} this round! \n")
             else:
                 print("This round is a draw! \n")   
             game_over = self.Win_Condition.win_condition_check()
