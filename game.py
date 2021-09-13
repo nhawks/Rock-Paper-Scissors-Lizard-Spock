@@ -22,7 +22,7 @@ class Game:
             self.round_count_option()
             self.start_round()
             self.display_winner()
-            game_continue = input("Would you like to play again? Please enter - Yes or No: ")
+            game_continue = input("Would you like to play again? Please enter - 1 (yes) or 2 (no):\n")
 
 
     def display_rules(self):
@@ -33,15 +33,14 @@ class Game:
         
     def game_mode(self):
         self.mode = int(input('''\n
-Single Player or Multiplayer
-1 - Human vs AI
-2 - Human vs Human
-
-Please enter one number from above: '''))
+Select a game mode:
+1 - Single Player 
+2 - Multiplayer
+Please enter one number from above:\n'''))
         return self.mode
 
     def round_count_option(self):
-        self.round_count = int(input("Enter the number for how many rounds you'd like to play: "))
+        self.round_count = int(input("Enter the number of rounds you'd like to play:\n"))
         self.Win_Condition.how_many_wins(self.round_count)
 
     def start_round(self):
@@ -69,8 +68,8 @@ Please enter one number from above: '''))
             print("\nThis round is a draw! \n")   
 
     def display_score(self):
-        print(f"Player One score: {self.Win_Condition.player_list.players[0].score}/{self.Win_Condition.wins_needed}!\n")
-        print(f"Player Two score: {self.Win_Condition.player_list.players[1].score}/{self.Win_Condition.wins_needed}!\n")
+        print(f"Player One score: {self.Win_Condition.player_list.players[0].score}/{self.Win_Condition.wins_needed} | "\
+        f"Player Two score: {self.Win_Condition.player_list.players[1].score}/{self.Win_Condition.wins_needed}!")
 
     def display_winner(self):
         if self.Win_Condition.player_list.players[0].score > self.Win_Condition.player_list.players[1].score:
