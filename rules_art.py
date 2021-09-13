@@ -1,4 +1,4 @@
-art = '''
+rules_art = '''
 ____________________________________________________________________________
 | 🥊📃✂🦎🖖 | ROCK vs PAPER vs SCISSORS vs LIZARD vs SPOCK | 🥊📃✂🦎🖖     |
 | The rules are simple pick an item from the list at start of each round   |

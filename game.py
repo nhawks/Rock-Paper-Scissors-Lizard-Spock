@@ -1,5 +1,5 @@
 from win_conditions import WinConditions
-from rules_art import art
+from rules_art import rules_art
 
 class Game:
     def __init__(self) -> None:
@@ -24,7 +24,7 @@ class Game:
 
 
     def display_rules(self):
-        print(art)
+        print(rules_art)
     
     def generate_players (self):
         self.Win_Condition.player_list.create_player(self.mode)
