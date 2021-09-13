@@ -8,7 +8,9 @@ class WinConditions:
 
     
     def gesture_comparison(self, player_one, player_two):
-        if player_one.choice == "rock":
+        if player_one.choice == player_two.choice:
+            return "This is a Draw!"
+        elif player_one.choice == "rock":
             if player_two.choice == "scissors" or player_two.choice == "lizard":
                 return True
             elif player_two.choice == "paper" or player_two.choice == "spock":

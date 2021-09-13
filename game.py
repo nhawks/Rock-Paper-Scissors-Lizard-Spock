@@ -57,10 +57,12 @@ class Game:
             player_one_result = self.Win_Condition.gesture_comparison(self.Win_Condition.player_list.players[0],self.Win_Condition.player_list.players[1])
             if player_one_result:
                 self.Win_Condition.player_list.players[0].score += 1
-                print(f"Player One's {self.Win_Condition.player_list.players[0].choice} beats Player Two's {self.Win_Condition.player_list.players[1].choice} this round!")
-            else:
+                print(f"Player One's {self.Win_Condition.player_list.players[0].choice} beats Player Two's {self.Win_Condition.player_list.players[1].choice} this round! \n")
+            elif player_one_result == False:
                 self.Win_Condition.player_list.players[1].score += 1
-                print(f"Player Two's {self.Win_Condition.player_list.players[1].choice} beats Player One's {self.Win_Condition.player_list.players[0].choice} this round!")
+                print(f"Player Two's {self.Win_Condition.player_list.players[1].choice} beats Player One's {self.Win_Condition.player_list.players[0].choice} this round! \n")
+            else:
+                print("This round is a draw! \n")   
             game_over = self.Win_Condition.win_condition_check()
 
     def display_winner(self):
