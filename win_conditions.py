@@ -35,8 +35,9 @@ class WinConditions:
                 return False
 
     def how_many_wins(self, rounds):
-        if rounds == 3:
-            self.wins_needed = 2  
+        self.wins_needed = int(rounds / 2) + 1
+        # if rounds == 3:
+        #     self.wins_needed = 2  
 
     def win_condition_check(self):
         for player in self.player_list.players:
