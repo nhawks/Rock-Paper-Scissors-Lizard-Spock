@@ -22,7 +22,7 @@ class Game:
             self.round_count_option()
             self.start_round()
             self.display_winner()
-            game_continue = input("Would you like to play again? Please enter - 1 (yes) or 2 (no):\n")
+            game_continue = input("Would you like to play again? Please enter - 1: Yes or 2: No\n")
 
 
     def display_rules(self):
@@ -36,7 +36,7 @@ class Game:
 Select a game mode:
 1 - Single Player 
 2 - Multiplayer
-Please enter one number from above:\n'''))
+Please select your game mode! 1 or 2:\n'''))
         return self.mode
 
     def round_count_option(self):
@@ -69,7 +69,7 @@ Please enter one number from above:\n'''))
 
     def display_score(self):
         print(f"Player One score: {self.Win_Condition.player_list.players[0].score}/{self.Win_Condition.wins_needed} | "\
-        f"Player Two score: {self.Win_Condition.player_list.players[1].score}/{self.Win_Condition.wins_needed}!")
+        f"Player Two score: {self.Win_Condition.player_list.players[1].score}/{self.Win_Condition.wins_needed}!\n")
 
     def display_winner(self):
         if self.Win_Condition.player_list.players[0].score > self.Win_Condition.player_list.players[1].score:
