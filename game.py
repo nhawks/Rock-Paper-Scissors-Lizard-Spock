@@ -46,10 +46,14 @@ Please enter one number from above:\n'''))
     def start_round(self):
         game_over = False
         self.Win_Condition.how_many_wins(self.round_count)
+        current_round = 1
         while not game_over:
+            print("___________________________________________________________")
+            print(f"ROUND: {current_round}/{self.round_count}")
             self.gesture_selection()
             self.round_result()
             self.display_score()
+            current_round += 1
             game_over = self.Win_Condition.win_condition_check()
 
     def gesture_selection(self):
