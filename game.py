@@ -1,5 +1,6 @@
 from win_conditions import WinConditions
 from rules_art import rules_art
+import os
 
 class Game:
     def __init__(self) -> None:
@@ -14,6 +15,7 @@ class Game:
     def run_game(self):
         game_continue = "1"
         while game_continue == "1":
+            os.system('cls')
             self.display_rules()
             self.game_mode()
             self.generate_players()
