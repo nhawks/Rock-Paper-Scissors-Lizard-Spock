@@ -13,28 +13,30 @@ class Game:
     def run_game(self):
         game_continue = "1"
         while game_continue == "1":
+            self.display_rules()
             self.game_mode()
             self.generate_players()
             self.round_count_option()
-            self.display_rules()
             self.start_round()
             self.display_winner()
             game_continue = input("Would you like to play again? 1: Yes 2: No \n")
 
 
     def display_rules(self):
-        print('''
-        \nRock crushes Scissors
-        \nScissors cuts Paper
-        \nPaper covers Rock
-        \nRock crushes Lizard
-        \nLizard poisons Spock
-        \nSpock smashes Scissors
-        \nScissors decapitates Lizard
-        \nLizard eats Paper
-        \nPaper disproves Spock
-        \nSpock vaporizes Rock\n
-        ''')
+        print(
+'''Welcome to: ROCK vs PAPER vs SCISSORS vs LIZARD vs SPOCK\n
+The rules are simple pick an item from the list at start of each round.
+Depending on your choice and your opponent's choice will decide who wins!
+You can play against AI or a friend and pick how many rounds you'd like to play.\n
+
+GESTURE BREAKDOWN\n
+________________________________________________________
+Rock crushes Scissors       | Scissors cuts Paper\n
+Paper covers Rock           | Rock crushes Lizard\n
+Lizard poisons Spock        | Spock smashes Scissors\n
+Scissors decapitates Lizard | Lizard eats Paper\n
+Paper disproves Spock       | Spock vaporizes Rock
+_________________________________________________________\n''')
     
     def generate_players (self):
         self.Win_Condition.player_list.create_player(self.mode)
