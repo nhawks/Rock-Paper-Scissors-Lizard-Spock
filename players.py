@@ -11,8 +11,8 @@ class Player:
     def pick_gesture(self):
         invalid = True
         while invalid:
-            print(f"{self.gestures}\n")
-            self.choice = input(f'{self.name} please pick a gesture! \n')
+            print(f"\n{self.gestures}\n")
+            self.choice = input(f'{self.name} please pick a gesture: ')
             if self.gesture_validation():
                 invalid = False
                 return self.choice

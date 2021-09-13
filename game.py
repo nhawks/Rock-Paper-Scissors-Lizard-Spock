@@ -20,7 +20,7 @@ class Game:
             self.round_count_option()
             self.start_round()
             self.display_winner()
-            game_continue = input("Would you like to play again? 1: Yes 2: No \n")
+            game_continue = input("Would you like to play again? Please enter - Yes or No: ")
 
 
     def display_rules(self):
@@ -30,11 +30,16 @@ class Game:
         self.Win_Condition.player_list.create_player(self.mode)
         
     def game_mode(self):
-        self.mode = int(input("How many players: 1 or 2 \n"))
+        self.mode = int(input('''\n
+Single Player or Multiplayer
+1 - Human vs AI
+2 - Human vs Human
+
+Please enter one number from above: '''))
         return self.mode
 
     def round_count_option(self):
-        self.round_count = int(input("How many rounds would you like to play? \n"))
+        self.round_count = int(input("Enter the number for how many rounds you'd like to play: "))
         self.Win_Condition.how_many_wins(self.round_count)
 
     def start_round(self):

@@ -9,5 +9,5 @@ class Ai (Player):
     
     def pick_gesture(self):
         self.choice = random.choice(self.gestures)
-        print("AI has made their choice...")
+        print("\nAI has made their choice...")
         return self.choice
