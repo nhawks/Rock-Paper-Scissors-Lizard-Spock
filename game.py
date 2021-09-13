@@ -55,6 +55,7 @@ _________________________________________________________\n''')
         while not game_over:
             self.gesture_selection()
             self.round_result()
+            self.display_score()
             game_over = self.Win_Condition.win_condition_check()
 
     def gesture_selection(self):
@@ -71,6 +72,10 @@ _________________________________________________________\n''')
             print(f"\nPlayer Two's {self.Win_Condition.player_list.players[1].choice} beats Player One's {self.Win_Condition.player_list.players[0].choice} this round! \n")
         else:
             print("\nThis round is a draw! \n")   
+
+    def display_score(self):
+        print(f"Player One score: {self.Win_Condition.player_list.players[0].score}/{self.Win_Condition.wins_needed}!\n")
+        print(f"Player Two score: {self.Win_Condition.player_list.players[1].score}/{self.Win_Condition.wins_needed}!\n")
 
     def display_winner(self):
         if self.Win_Condition.player_list.players[0].score > self.Win_Condition.player_list.players[1].score:
